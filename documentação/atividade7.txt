@@ -1,0 +1,12 @@
+Um dono de loja de capinhas precisa:
+-Contabilizar a quantidade de capinhas:
+	-compradas
+	-vendidas
+-As capinhas serão contabilizadas por lote(1 a N).
+	-Cada lote tem um preço unitário.
+-O sistema deverá contabilizar os valores de:
+	-despesa (quantidade de dinheiro gasto comprando capinha).
+	-ganho (quantidade de dinheiro gasto vendendo capinha).
+	-lucro(ganho - despesa).
+-ObservableCollection:
+	-Toda vez que o usuário inserir a compra ou venda de um lote, o sistema deve automaticamente mostrar: despesa, ganho e lucro
