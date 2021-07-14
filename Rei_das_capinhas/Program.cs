@@ -8,8 +8,52 @@ namespace Rei_das_capinhas
         {
             //teste_preenchimentoDaLista();
             // teste_calcularValorLista();
-            aferir_lucro();
+            //teste_aferir_lucro();
+            //teste__handlers();
+            entradas_usuario();
+        }
 
+        public static void entradas_usuario()
+        {
+            Loja loja = new Loja();
+
+            while (true)
+            {
+                int usuario_escolha = 0,
+                    quantidade_lote = 0;
+                float valor_unitario = 0;
+
+
+                Console.Write("\n\n\nBem vindo ao Sistema Rei das Capas"
+                              + "\nEscolha as seguintes opções:"
+                              + "\n1-Comprar"
+                              + "\n2-Vender"
+                              + "\n0-Sair"
+                              + "\nSua escolha: ");
+
+                //TODO: Implementar verificacao para caso de valores: com menos(-), nenhum valor.
+                usuario_escolha = int.Parse(Console.ReadLine());
+            
+                if (usuario_escolha != 1 && usuario_escolha != 2) break;
+
+                Console.Clear();
+                Console.Write("\nInsira a quantidade: ");
+                //TODO: Implementar verificacao para caso de valores: com menos(-), nenhum valor.
+                quantidade_lote = int.Parse(Console.ReadLine());
+                Console.Write("\nInsira o valor por unidade: ");
+                //TODO: Implementar verificacao para caso de valores: com menos(-), nenhum valor.
+                valor_unitario = int.Parse(Console.ReadLine());
+
+                if (usuario_escolha == 1)
+                {
+                    loja.comprar_CapaDeCelular(quantidade_lote,valor_unitario);
+                }
+                else
+                {
+                    loja.vender_CapaDeCelular(quantidade_lote, valor_unitario);
+                }
+
+            }
         }
 
         public static void teste_preenchimentoDaLista()
@@ -58,7 +102,7 @@ namespace Rei_das_capinhas
             //Verificar o resultado durante o 'Debug'.
         }
 
-        public static void aferir_lucro()
+        public static void teste_aferir_lucro()
         {
             Loja loja = new Loja();
             Random rand = new Random();
@@ -87,7 +131,16 @@ namespace Rei_das_capinhas
             //Verificar o resultado durante o 'Debug'.
         }
 
-        public static void teste_TesteCalculadoMundoReal()
+        public static void teste__handlers()
+        {
+            Loja loja = new Loja();
+
+            loja.comprar_CapaDeCelular(10,2);
+            loja.vender_CapaDeCelular(5,5);
+
+        }
+
+        public static void teste_TesteCalculoValoresMundoReal()
         {
             //TODO: Calculo com valores previamente calculados.
         }
