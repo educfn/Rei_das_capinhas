@@ -51,8 +51,11 @@ namespace Rei_das_capinhas
         {
             float valorTotalDaLista = 0;
 
-            //TODO: calcular_valor_lista
-
+            for (int i = 0; i < lista.Count; i++)
+            {
+                valorTotalDaLista += lista[i].Valor_unitario;
+            }
+           
             return valorTotalDaLista;
         }
 

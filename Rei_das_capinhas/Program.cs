@@ -6,7 +6,19 @@ namespace Rei_das_capinhas
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            teste_preenchimentoDaLista();
+
+        }
+
+        public static void teste_preenchimentoDaLista()
+        {
+            Loja loja = new Loja();
+            Random rand = new Random();
+
+            loja.comprar_CapaDeCelular(rand.Next(1,100),rand.Next(1, 1000));
+            loja.vender_CapaDeCelular(rand.Next(1, 100), rand.Next(1, 1000));
+
         }
     }
+
 }
