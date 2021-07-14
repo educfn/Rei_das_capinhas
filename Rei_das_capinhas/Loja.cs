@@ -25,12 +25,26 @@ namespace Rei_das_capinhas
 
         public void comprar_CapaDeCelular(int quantidadeDoLote, float valor_unitario)
         {
-            //TODO: comprar_CapaDeCelular
+            if (quantidadeDoLote > 0 && valor_unitario > 0)
+            {
+                for (int i = 0; i < quantidadeDoLote; i++)
+                {
+                    CapaDeCelular capa = new CapaDeCelular(valor_unitario);
+                    capas_compradas.Add(capa);
+                }
+            }
         }
 
         public void vender_CapaDeCelular(int quantidadeDoLote, float valor_unitario)
         {
-            //TODO: vender_CapaDeCelular
+            if (quantidadeDoLote > 0 && valor_unitario > 0)
+            {
+                for (int i = 0; i < quantidadeDoLote; i++)
+                {
+                    CapaDeCelular capa = new CapaDeCelular(valor_unitario);
+                    capas_vendidas.Add(capa);
+                }
+            }
         }
 
         public float calcular_valor_lista(ObservableCollection<CapaDeCelular> lista)
