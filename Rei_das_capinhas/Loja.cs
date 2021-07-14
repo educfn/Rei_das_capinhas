@@ -47,23 +47,38 @@ namespace Rei_das_capinhas
             }
         }
 
-        public float calcular_valor_lista(ObservableCollection<CapaDeCelular> lista)
+        public float calcular_valor_listaCompras()
         {
-            float valorTotalDaLista = 0;
+            float valorTotalDaLista = 0;        
 
-            for (int i = 0; i < lista.Count; i++)
+            for (int i = 0; i < capas_compradas.Count; i++)
             {
-                valorTotalDaLista += lista[i].Valor_unitario;
+                valorTotalDaLista += capas_compradas[i].Valor_unitario;
             }
            
             return valorTotalDaLista;
         }
 
+        public float calcular_valor_listaVendas()
+        {
+            float valorTotalDaLista = 0;
+
+            for (int i = 0; i < capas_vendidas.Count; i++)
+            {
+                valorTotalDaLista += capas_vendidas[i].Valor_unitario;
+            }
+
+            return valorTotalDaLista;
+        }
+
         public float aferir_lucro() 
         {
-            float valor_lucro = 0;
+            float valor_lucro = 0, valorTotal_ListaCompras = 0, valorTotal_ListaVendas = 0;
 
-            //TODO: aferir_lucro
+            valorTotal_ListaCompras = calcular_valor_listaCompras();
+            valorTotal_ListaVendas = calcular_valor_listaVendas();
+
+            valor_lucro = valorTotal_ListaVendas - valorTotal_ListaCompras;
 
             return valor_lucro;
         }
